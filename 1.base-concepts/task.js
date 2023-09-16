@@ -12,7 +12,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 */
 
 function solveEquation(a, b, c) {
-  let discriminant = b ** 2 - 4 * a * c;
+  let discriminant = (b ** 2) - (4 * a * c);
   let arr = [];
 
   if (discriminant < 0) {
@@ -37,4 +37,5 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let totalPayment = monthlyPayment * countMonths;
   let roundedTotalPayment = parseFloat(totalPayment.toFixed(2));
   console.log(Number(roundedTotalPayment));
+  return roundedTotalPayment;
 }
