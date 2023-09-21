@@ -29,17 +29,17 @@ class AlarmClock {
     }
   
     start() {
-      if (this.intervalId === null) {     
+      if (this.intervalId === null) {
         this.intervalId = setInterval(() => {
-          this.alarmCollection.forEach((item) => {
-            if (item.time === (this.getCurrentFormattedTime()) && item.canCall) {
-              item.canCall = false;
-              item.callback();
-            }
-          });
-        },1000);
+            this.alarmCollection.forEach((item) => {
+                if (item.time === (this.getCurrentFormattedTime()) && item.canCall) {
+                    item.canCall = false;
+                    item.callback();
+                 }
+            });
+         },1000);
+        }
     }
-}
   
     stop() {
         clearInterval(this.intervalId);
