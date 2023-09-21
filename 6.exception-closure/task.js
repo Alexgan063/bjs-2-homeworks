@@ -10,9 +10,9 @@ function parseCount(count){
 
 function validateCount(count){
     try {
-    let parsingResult = parseCount(count);
-    return parsingResult; 
-    } catch (error) {
+        return parseCount(count);
+    }
+    catch (error) {
         return error;
     }
 }
@@ -30,9 +30,7 @@ class Triangle{
         this.a = a;   
         this.b = b;
         this.c = c;  
-    }
-    
-    
+    } 
 
     get perimeter(){
         return this.a + this.b + this.c;
@@ -46,9 +44,8 @@ class Triangle{
 }
 
 function getTriangle(a, b, c){
-    try{
-        let triangle1 = new Triangle(a, b, c);
-        return triangle1;
+    try {
+        return new Triangle(a, b, c);
     }
     catch(error)
     {
