@@ -29,63 +29,45 @@ class PrintEditionItem{
 }
 
 class Magazine extends PrintEditionItem {
-    constructor (name, releaseDate, pagesCount){
-      super(name);
-      this.releaseDate = releaseDate;
-      this.pagesCount = pagesCount;
-      this._state = 100;
+    constructor (name, releaseDate, pagesCount) {
+      super(name, releaseDate, pagesCount);
       this.type = "magazine";
   }
   }
    
   class Book extends PrintEditionItem {
-    constructor ( author, name, releaseDate, pagesCount){
-      super(name);
-      this.releaseDate = releaseDate;
-      this.pagesCount = pagesCount;
-      this._state = 100;
-      this.type = "book";
-      this.author = author;
+    constructor ( author, name, releaseDate, pagesCount) {
+        super(name, releaseDate, pagesCount);
+        this.author = author;
+        this.type = "book";   
   }
   }
 
   class NovelBook extends Book {
-    constructor ( author, name, releaseDate, pagesCount){
-      super(name);
-      this.releaseDate = releaseDate;
-      this.pagesCount = pagesCount;
-      this._state = 100;
-      this.type = "novel";
-      this.author = author;
+    constructor (author, name, releaseDate, pagesCount) {
+        super(author, name, releaseDate, pagesCount);
+        this.type = "novel";
   }
   }
 
   class FantasticBook extends Book {
-    constructor ( author, name, releaseDate, pagesCount){
-      super(name);
-      this.releaseDate = releaseDate;
-      this.pagesCount = pagesCount;
-      this._state = 100;
-      this.type = "fantastic";
-      this.author = author;
+    constructor (author, name, releaseDate, pagesCount) {
+        super(author, name, releaseDate, pagesCount );
+        this.type = "fantastic";
   }
   }
   
   class DetectiveBook extends Book {
     constructor ( author, name, releaseDate, pagesCount){
-      super(name);
-      this.releaseDate = releaseDate;
-      this.pagesCount = pagesCount;
-      this._state = 100;
-      this.type = "detective";
-      this.author = author;
+        super(author, name, releaseDate, pagesCount );
+        this.type = "detective";   
   }
   }
 
   // Задаине 2 - библиотека
 
   class Library{
-    constructor(name){
+    constructor(name) {
         this.name = name;
         this.books = [];
     }
@@ -95,7 +77,7 @@ class Magazine extends PrintEditionItem {
         }
     }
 
-    findBookBy(type, value){
+    findBookBy(type, value) {
         return this.books.find(book => book[type] === value, 0) || null;
     }
 
@@ -106,5 +88,4 @@ class Magazine extends PrintEditionItem {
         }
         return book;
       }
-
   }

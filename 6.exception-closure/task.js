@@ -20,38 +20,29 @@ function validateCount(count){
 // Задача 2 - Работа с треугольником - 
 
 class Triangle{
-    #perimeter;
-    #area;
     constructor(a, b, c){
         let error = new Error ('Треугольник с такими сторонами не существует');
 
         if ((a+b) < c || (b+c) < a || (a+c) < b){
             throw error;
-        } else {
-            this.a = a;
-            this.b = b;
-            this.c = c;
-        }
+        } 
+            
+        this.a = a;   
+        this.b = b;
+        this.c = c;  
     }
     
-    set perimeter(any){
-        return this.#perimeter;
-   }
+    
 
     get perimeter(){
-        return this.#perimeter = this.a + this.b + this.c;
+        return this.a + this.b + this.c;
     }
     
-
-    set area(any){
-        return this.#area;
-    }
-
     get area(){
         let p = this.perimeter / 2; 
 
-        return this.#area = Number(Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c)).toFixed(3));
-    }
+        return Number(Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c)).toFixed(3));
+    }    
 }
 
 function getTriangle(a, b, c){
