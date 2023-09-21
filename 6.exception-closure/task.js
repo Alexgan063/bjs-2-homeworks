@@ -17,7 +17,7 @@ function validateCount(count){
     }
 }
 
-// Задача 2 - Работа с треугольником
+// Задача 2 - Работа с треугольником - 
 
 class Triangle{
     #perimeter;
